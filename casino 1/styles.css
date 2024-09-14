@@ -1,0 +1,250 @@
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #f7c52e,
+            0 0 80px #f7c52e,
+            0 0 90px #f7c52e,
+            0 0 100px #f7c52e,
+            0 0 150px #f7c52e;
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f7c52e, 0 0 35px #f7c52e, 0 0 40px #f7c52e, 0 0 50px #f7c52e, 0 0 75px #f7c52e;
+    }
+    50% {
+        box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #f7c52e, 0 0 17px #f7c52e, 0 0 20px #f7c52e, 0 0 25px #f7c52e, 0 0 37px #f7c52e;
+    }
+    100% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f7c52e, 0 0 35px #f7c52e, 0 0 40px #f7c52e, 0 0 50px #f7c52e, 0 0 75px #f7c52e;
+    }
+}
+
+@keyframes spin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-300%); }
+}
+
+@keyframes jackpot {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #1a0033, #4d0026);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.casino-container {
+    background-color: rgba(26, 0, 51, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(247, 197, 46, 0.5);
+}
+
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f7c52e, 0 0 35px #f7c52e, 0 0 40px #f7c52e, 0 0 50px #f7c52e, 0 0 75px #f7c52e;
+    animation: neonFlicker 1.5s infinite alternate;
+}
+
+.neon-button {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #f7c52e;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f7c52e, 0 0 35px #f7c52e, 0 0 40px #f7c52e;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f7c52e;
+}
+
+.neon-button:hover {
+    background: rgba(247, 197, 46, 0.1);
+    transform: scale(1.05);
+    animation: neonPulse 1s infinite;
+}
+
+.neon-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: none;
+}
+
+.neon-box {
+    border: 2px solid #f7c52e;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f7c52e;
+}
+
+.neon-input {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #f7c52e;
+    border-radius: 5px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #f7c52e;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 5px;
+}
+
+.tab.active {
+    border-bottom: 2px solid #f7c52e;
+    box-shadow: 0 4px 2px -2px #f7c52e;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.slot-machine {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.reel {
+    background-color: rgba(77, 0, 38, 0.5);
+    border: 2px solid #f7c52e;
+    border-radius: 10px;
+    width: 80px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.symbol {
+    font-size: 48px;
+    position: absolute;
+    animation: spin 1s infinite linear;
+}
+
+.bet-controls, .auto-play-controls {
+    margin-bottom: 20px;
+}
+
+.bet-amount-controls, .auto-play-amount-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#spinButton {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#spinButton.pulse {
+    animation: neonPulse 1s infinite;
+}
+
+#result {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+#walletAddress {
+    word-break: break-all;
+    margin-top: 20px;
+}
+
+#userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#username {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#connectedAddress {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.jackpot {
+    animation: jackpot 0.5s ease-in-out 3;
+}
+
+@media (max-width: 480px) {
+    .casino-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .reel {
+        width: 60px;
+        height: 90px;
+    }
+
+    .symbol {
+        font-size: 36px;
+    }
+}
